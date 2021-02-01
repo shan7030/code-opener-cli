@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "code-opener-cli"
 version = "0.1.0"
-description = "The CLI to hadle your projects and Editors smartly"
+description = "The CLI to handle your projects and Editors smartly"
 authors = ["Shantanu Joshi <shantanujoshi7030@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-code-opener-cli = "code-opener-cli.main:app"
+copen = "code_opener_cli.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.6"
