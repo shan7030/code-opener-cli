@@ -1,7 +1,7 @@
 """
 Main file for the package
 """
-
+import os
 import typer
 import json
 from code_opener_cli.utils.helpers import JsonDataOperations
@@ -16,8 +16,27 @@ def callback():
     
     
 @app.command()
-def add(project_name:str =  typer.Option(...,prompt=True), path: str = typer.Option(...,prompt=True)):
+def add(project_name:str =  typer.Option(...,prompt=True)):
     """
     Add the project to the list of projects
     """
-    JsonDataOperations.create()
+    path = os.getcwd()
+    print(f'Path: {path}')
+    print(f'Project Name: {project_name}')
+    if JsonDataOperations.present():
+        current_config = JsonDataOperations.read()
+        current_config['projects'].append(project_name)
+        JsonDataOperations.update(current_config)
+    else:
+        JsonDataOperations.create()
+
+
+@app.command()
+def read():
+    """
+    Add the project to the list of projects
+    """
+    if JsonDataOperations.present():
+        print(JsonDataOperations.read())
+    else:
+        JsonDataOperations.create()
