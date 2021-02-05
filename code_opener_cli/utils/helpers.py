@@ -21,12 +21,12 @@ class JsonDataOperations:
             json.dump(DefaultConfiguration.CONFIGURATION_DATA, outfile)
         
     @classmethod
-    def update(cls,configData):
+    def update(cls,config_data):
         """
         Creates the setting.json file
         """
-        with open(configData, 'w') as outfile:
-            json.dump(configData, outfile)
+        with open(DefaultConfiguration.CONFIGURATION_FILE_NAME, 'w') as outfile:
+            json.dump(config_data, outfile)
 
     @classmethod
     def read(cls):
@@ -35,7 +35,7 @@ class JsonDataOperations:
         """
         with open(DefaultConfiguration.CONFIGURATION_FILE_NAME) as json_data:
             data = json.load(json_data)
-            return data
+        return data
 
     @classmethod
     def present(cls):
