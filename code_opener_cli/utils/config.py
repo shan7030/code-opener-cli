@@ -12,4 +12,4 @@ class DefaultConfiguration:
         'default_editor':  'code',
         'projects': []
     }
-    CONFIGURATION_FILE_NAME = 'settings.json'
+    CONFIGURATION_FILE_NAME = 'settings.txt'
