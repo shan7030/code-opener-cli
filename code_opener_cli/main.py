@@ -21,11 +21,9 @@ def add(project_name:str =  typer.Option(...,prompt=True)):
     Add the project to the list of projects
     """
     path = os.getcwd()
-    print(f'Path: {path}')
-    print(f'Project Name: {project_name}')
     if JsonDataOperations.present():
         current_config = JsonDataOperations.read()
-        current_config['projects'].append(project_name)
+        current_config['projects'].append({'project_name':project_name, 'path':path})
         JsonDataOperations.update(current_config)
     else:
         JsonDataOperations.create()
