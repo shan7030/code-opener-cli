@@ -3,29 +3,19 @@
 """
 
 import json
-from code_opener_cli.utils.config import DefaultConfiguration
-
+from code_opener_cli.path_definitions import CodeOpenerDirectoryPath
 
 class JsonDataOperations: 
     """
     This class is used for operations on settings.json file.
     setting.json file servers as basic configuration for the project
     """
-
-    @classmethod
-    def create(cls):
-        """
-        Creates the setting.json file
-        """
-        with open(DefaultConfiguration.CONFIGURATION_FILE_NAME, 'w') as outfile:
-            json.dump(DefaultConfiguration.CONFIGURATION_DATA, outfile)
-        
     @classmethod
     def update(cls,config_data):
         """
         Creates the setting.json file
         """
-        with open(DefaultConfiguration.CONFIGURATION_FILE_NAME, 'w') as outfile:
+        with open(CodeOpenerDirectoryPath.CONFIG_FILE_PATH.value, 'w') as outfile:
             json.dump(config_data, outfile)
 
     @classmethod
@@ -33,24 +23,7 @@ class JsonDataOperations:
         """ 
         Reads the setting.json file
         """
-        with open(DefaultConfiguration.CONFIGURATION_FILE_NAME) as json_data:
-            data = json.load(json_data)
+        f = open(CodeOpenerDirectoryPath.CONFIG_FILE_PATH.value,)
+        data = json.load(f)
+        f.close()
         return data
-
-    @classmethod
-    def present(cls):
-        """
-        Checks whether the setting.json is already present
-
-        Returns: 
-            True : When configuration file present
-            False: When configuration file not present
-        
-        """
-        try: 
-            with open(DefaultConfiguration.CONFIGURATION_FILE_NAME) as json_data:
-                data = json.load(json_data)
-                print(data)
-                return True
-        except FileNotFoundError:
-            return False
