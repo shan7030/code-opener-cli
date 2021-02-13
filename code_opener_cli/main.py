@@ -82,8 +82,8 @@ def open(project_name:str =  typer.Argument(...,autocompletion=list_projects,met
         if project_item['project_name']==project_name:
             found = typer.style("Project Found!", fg=typer.colors.GREEN, bold=True)
             typer.echo(found)
-            command = 'cd '+project_item['path']+ "; "+current_config['default_editor']
-            os.system(command)
+            os.chdir(project_item['path'])
+            os.system(current_config['default_editor'])
             found = True
             break
 
