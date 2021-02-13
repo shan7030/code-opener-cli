@@ -34,7 +34,7 @@ def callback(ctx: typer.Context,version: Optional[bool] = typer.Option(None, "--
         typer.echo('Use ' +command + ' to get help with commands')
     
 @app.command()
-def add(project_name:str =  typer.Option(...,"-pn",prompt=True,metavar="Name by which you like to call this project 🥺")):
+def add(project_name:str =  typer.Option(...,"--project-name","-pn",prompt=True,metavar="Name by which you like to call this project 🥺")):
     """
     Add a project with PROJECT_NAME
     """
