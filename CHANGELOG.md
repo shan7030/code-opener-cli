@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Command remove to remove a project
 - Command see to see projects list
 - Command open to open a project
+- Included `code .` for VSCode Editor
 - Pull Request template
 - Issue Templates
 - [CONTRIBUTING.md](https://github.com/shan7030/code-opener-cli/blob/master/CONTRIBUTING.md) file
