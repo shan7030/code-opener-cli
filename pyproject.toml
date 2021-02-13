@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "code-opener-cli"
-version = "0.1.0"
+version = "1.0.0"
 description = "The CLI to handle your projects and Editors smartly"
 authors = ["Shantanu Joshi <shantanujoshi7030@gmail.com>"]
 readme = "README.md"
