@@ -50,6 +50,7 @@ def add(project_name:str =  typer.Option(...,"-pn",prompt=True,metavar="Name by 
             
     current_config['projects'].append({'project_name':project_name, 'path':path})
     JsonDataOperations.update(current_config)
+    typer.secho("Project added successfully!!", fg=typer.colors.BRIGHT_GREEN)
 
 @app.command()
 def see():
@@ -61,7 +62,7 @@ def see():
         typer.echo('Seems like you have not added any project yet!!!')
         command = typer.style("copen add", bg=typer.colors.BRIGHT_WHITE,fg=typer.colors.BLACK)
         typer.echo('Use ' +command + ' to add new project')
-        raise typer.Exit(code=1)
+        raise typer.Exit()
 
     col = typer.style("Project Name",fg=typer.colors.CYAN, bold=True)
     typer.echo(col)
@@ -92,6 +93,7 @@ def open(project_name:str =  typer.Argument(...,autocompletion=list_projects,met
         typer.echo(not_found,  err=True)
         command = typer.style("copen add", bg=typer.colors.BRIGHT_WHITE,fg=typer.colors.BLACK)
         typer.echo('Use ' +command + ' to add new project')
+        raise typer.Exit()
 
 @app.command()
 def remove(project_name:str = typer.Option(...,"--project-name","-pn",autocompletion=list_projects,prompt=True,confirmation_prompt=True,metavar="Project Name which you used while adding 🥺")):
