@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "code-opener-cli"
-version = "1.0.0"
+version = "1.0.1"
 description = "The CLI to handle your projects and Editors smartly"
 authors = ["Shantanu Joshi <shantanujoshi7030@gmail.com>"]
 readme = "README.md"
@@ -16,5 +16,5 @@ typer = {extras = ["all"], version = "^0.3.2"}
 pytest = "^5.2"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.1"]
 build-backend = "poetry.core.masonry.api"
