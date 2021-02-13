@@ -4,7 +4,7 @@ The command line interface to add any project as favorite and open it from anywh
 
 # Commands
 
-### See Lists of Projects Added 
+## See Lists of Projects Added 
 
 ```
 copen see
