@@ -19,7 +19,8 @@ copen see
     copen add
     ```
     2. This will ask for project name, give any nick name to project which is handy to you and press Enter.
-    Done :smile: Now you can open this project from anywhere . 
+    <br>
+    Done :smile:, now you can open this project from anywhere . 
 
 - <b> Method 2 : </b> 
         You can also directly add using one of the following single command :
@@ -71,9 +72,9 @@ After a project is added , you can easily open it from anywhere using this comma
 
 ## Contributing to Project
 
-Let's take this project to next level together 🎉 You can find the guidelines to contribute to this project here.
+Let's take this project to next level together 🎉 You can find the guidelines to contribute to this project [here](https://github.com/shan7030/code-opener-cli/blob/master/CONTRIBUTING.md).
 
 ## Changelogs
 
-All notable changes to this projects can be found in CHANGELOG
-Currently, this CLI supports on VSCode, but support for other code editors/IDE's will be added soon :smile:
+All notable changes to this projects can be found in [CHANGELOG.md](https://github.com/shan7030/code-opener-cli/blob/master/CHANGELOG.md) .
+Currently, this CLI supports on VSCode, but support for other code editors/IDE's will be added soon :smile: .
