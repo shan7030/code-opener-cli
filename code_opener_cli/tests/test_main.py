@@ -93,8 +93,12 @@ def test_open_project_present(monkeypatch, config_with_project):
     def mock_os_sytem(command):
         return None
     
+    def mock_os_chdir(dir_name):
+        return None
+
     monkeypatch.setattr(JsonDataOperations, 'read', mock_read)
     monkeypatch.setattr(os, 'system', mock_os_sytem)
+    monkeypatch.setattr(os, 'chdir', mock_os_chdir)
 
     result = runner.invoke(app, ["open", "abc"])
     assert result.exit_code == 0
