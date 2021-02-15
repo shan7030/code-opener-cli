@@ -2,6 +2,13 @@
 
 The command line interface to add any project as favorite and open it from anywhere using just one command. Use `copen add` to add and `copen open <project_name>` to open and . See commands to get idea on more things supported by Code Opener CLI 
 
+
+# Installation
+
+```
+pip install code-opener-cli
+```
+
 # Commands
 
 ## See Lists of Projects Added 
