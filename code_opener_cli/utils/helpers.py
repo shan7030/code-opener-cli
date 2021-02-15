@@ -1,7 +1,6 @@
 """
     This file contains the utility classes and methods for the project
 """
-
 import json
 from code_opener_cli.path_definitions import CodeOpenerDirectoryPath
 

@@ -1,3 +1,6 @@
+"""
+Coniguration for Tests mainly contains all fixtures
+"""
 import pytest
 
 @pytest.fixture(scope="package")

@@ -1,9 +1,13 @@
+"""
+Tests for commands in Main file(code_opener_cli/main.py)
+"""
 import os
 from typer.testing import CliRunner
 
 from code_opener_cli.main import app
 from code_opener_cli.utils.helpers import JsonDataOperations
 
+# Runner Object
 runner = CliRunner()
 
 def test_see_with_no_projects(monkeypatch, config_with_no_project):
