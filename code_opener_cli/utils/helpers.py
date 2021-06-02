@@ -33,9 +33,13 @@ class AutoComplete:
     This class is used for providing autocomplete suggestions
     based on the tab press by the user
     """
-    
+    # TODO: Add a proper data structure to create a list of editors
+    # It should include short name, display name and command to open
+    editor_list = ['VSCode','Sublime Text']
+
+
     @classmethod
-    def list_projects(incomplete: str):
+    def list_projects(cls,incomplete: str):
         """
         Provides autocomplete for list of projects
         """
@@ -45,3 +49,14 @@ class AutoComplete:
             if project_item['project_name'].startswith(incomplete):
                 project_name_list.append(project_item['project_name'])
         return project_name_list
+
+    @classmethod
+    def list_of_editors(cls,incomplete:str):
+        """
+        Provides autocomplete for list of editors
+        """
+        editors_matched = []
+        for editor in cls.editor_list:
+            if editor.startswith(incomplete):
+                editors_matched.append(editor)
+        return editor
