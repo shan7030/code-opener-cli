@@ -26,3 +26,22 @@ class JsonDataOperations:
         data = json.load(f)
         f.close()
         return data
+        
+
+class AutoComplete:
+    """
+    This class is used for providing autocomplete suggestions
+    based on the tab press by the user
+    """
+    
+    @classmethod
+    def list_projects(incomplete: str):
+        """
+        Provides autocomplete for list of projects
+        """
+        current_config = JsonDataOperations.read()
+        project_name_list = []
+        for project_item in current_config['projects']:
+            if project_item['project_name'].startswith(incomplete):
+                project_name_list.append(project_item['project_name'])
+        return project_name_list

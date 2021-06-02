@@ -4,7 +4,7 @@ Main file for the package
 import os
 import typer
 import json
-from code_opener_cli.utils.helpers import JsonDataOperations
+from code_opener_cli.utils.helpers import JsonDataOperations,AutoComplete
 from code_opener_cli import __version__
 from typing import Optional
 
@@ -15,13 +15,6 @@ def version_callback(value: bool):
         typer.echo(f"Code Opener CLI Version: {__version__}")
         raise typer.Exit()
 
-def list_projects(incomplete: str):
-    current_config = JsonDataOperations.read()
-    project_name_list = []
-    for project_item in current_config['projects']:
-        if project_item['project_name'].startswith(incomplete):
-            project_name_list.append(project_item['project_name'])
-    return project_name_list
 
 @app.callback(invoke_without_command=True)
 def callback(ctx: typer.Context,version: Optional[bool] = typer.Option(None, "--version", callback=version_callback)):
@@ -72,7 +65,7 @@ def see():
     typer.echo("=======================")
 
 @app.command()
-def open(project_name:str =  typer.Argument(...,autocompletion=list_projects,metavar="Project Name which you used while adding 🥺")):
+def open(project_name:str =  typer.Argument(...,autocompletion=AutoComplete.list_projects,metavar="Project Name which you used while adding 🥺")):
     """
     Opens a Project with PROJECT_NAME
     """
@@ -96,7 +89,7 @@ def open(project_name:str =  typer.Argument(...,autocompletion=list_projects,met
         raise typer.Exit()
 
 @app.command()
-def remove(project_name:str = typer.Option(...,"--project-name","-pn",autocompletion=list_projects,prompt=True,confirmation_prompt=True,metavar="Project Name which you used while adding 🥺")):
+def remove(project_name:str = typer.Option(...,"--project-name","-pn",autocompletion=AutoComplete.list_projects,prompt=True,confirmation_prompt=True,metavar="Project Name which you used while adding 🥺")):
     """
     Removes a project with specified PROJECT_NAME
     """
