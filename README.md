@@ -20,8 +20,7 @@ copen see
 ## Add a Project
 
 - <b> Method 1 : </b> 
-    1. Adding Project just requires you to go to project using `cd` for the first time and type command <br>
-    `copen add` 
+    1. Adding Project just requires you to go to project using `cd` for the first time and type command `copen add` 
 
     ```
     cd path/to/your/project
